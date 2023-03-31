@@ -1,0 +1,315 @@
+Executing action: erase-flash
+Serial port /dev/cu.usbserial-14120
+Connecting....
+Detecting chip type... ESP32-C3
+Running esptool.py in directory /Users/allen/esp/esp-matter/examples/light/build
+Executing "/Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/allen/esp/esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-14120 -b 460800 --before default_reset --after hard_reset --chip esp32c3 erase_flash"...
+esptool.py v4.5.1
+Serial port /dev/cu.usbserial-14120
+Connecting....
+Chip is ESP32-C3 (revision v0.3)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 58:cf:79:0c:72:f0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 12.1s
+Hard resetting via RTS pin...
+Executing action: flash
+Running ninja in directory /Users/allen/esp/esp-matter/examples/light/build
+Executing "ninja flash"...
+ 1/10  Performing build step for 'bootloader'
+ 1/1  cd /Users/allen/esp/esp-matter/examples/light/build/bootloader/esp-idf/esptool_py && /Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/allen/esp/esp-idf/components/partition_table/check_sizes.py --offset 0xc000 bootloader 0x0 /Users/allen/esp/esp-matter/examples/light/build/bootloader/bootloader.bin
+Bootloader binary size 0x5050 bytes. 0x6fb0 bytes (58%) free.
+ 2/10  No install step for 'bootloader'
+ 3/10  Completed 'bootloader'
+ 4/10  Performing build step for 'chip_gn'
+ninja: no work to do.
+ 5/8  No install step for 'chip_gn'
+ 6/8  Completed 'chip_gn'
+ 7/8  cd /Users/allen/esp/esp-matter/examples/light/build/esp-idf/esptool_py && /Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/allen/esp/esp-idf/components/partition_table/check_sizes.py --offset 0xc000 partition --type app /Users/allen/esp/esp-matter/examples/light/build/partition_table/partition-table.bin /Users/allen/esp/esp-matter/examples/light/build/light.bin
+light.bin binary size 0x1589e0 bytes. Smallest app partition is 0x1e0000 bytes. 0x87620 bytes (28%) free.
+ 7/8  cd /Users/allen/esp/esp-idf/components/esptool_py && /usr/local/Cellar/cmake/3.26.2/bin/cmake -D IDF_PATH=/Users/allen/esp/esp-idf -D "SERIAL_TOOL=/Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin/python;;/Users/allen/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/allen/esp/esp-matter/examples/light/build -P /Users/allen/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool esp32c3 -p /dev/cu.usbserial-14120 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0 bootloader/bootloader.bin 0x20000 light.bin 0xc000 partition_table/partition-table.bin 0x17000 ota_data_initial.bin
+esptool.py v4.5.1
+Serial port /dev/cu.usbserial-14120
+Connecting....
+Chip is ESP32-C3 (revision v0.3)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 58:cf:79:0c:72:f0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00020000 to 0x00178fff...
+Flash will be erased from 0x0000c000 to 0x0000cfff...
+Flash will be erased from 0x00017000 to 0x00018fff...
+Compressed 20560 bytes to 12618...
+Writing at 0x00000000... (100 %)
+Wrote 20560 bytes (12618 compressed) at 0x00000000 in 0.6 seconds (effective 275.2 kbit/s)...
+Hash of data verified.
+Compressed 1411552 bytes to 843942...
+Writing at 0x00020000... (1 %)
+Writing at 0x0002bce3... (3 %)
+Writing at 0x0003665c... (5 %)
+Writing at 0x0003f328... (7 %)
+Writing at 0x0004495c... (9 %)
+Writing at 0x0004e2e9... (11 %)
+Writing at 0x0005ab2d... (13 %)
+Writing at 0x000623e1... (15 %)
+Writing at 0x00068b7e... (17 %)
+Writing at 0x0006f70a... (19 %)
+Writing at 0x00075402... (21 %)
+Writing at 0x0007b043... (23 %)
+Writing at 0x0008314f... (25 %)
+Writing at 0x00088c65... (26 %)
+Writing at 0x0008f39a... (28 %)
+Writing at 0x00095a33... (30 %)
+Writing at 0x0009ba0c... (32 %)
+Writing at 0x000a1a6a... (34 %)
+Writing at 0x000a87a4... (36 %)
+Writing at 0x000af3dd... (38 %)
+Writing at 0x000b5efb... (40 %)
+Writing at 0x000bbf0e... (42 %)
+Writing at 0x000c29dd... (44 %)
+Writing at 0x000c9a7c... (46 %)
+Writing at 0x000cf45b... (48 %)
+Writing at 0x000d59de... (50 %)
+Writing at 0x000db6d9... (51 %)
+Writing at 0x000e14b8... (53 %)
+Writing at 0x000e6ea9... (55 %)
+Writing at 0x000ece10... (57 %)
+Writing at 0x000f2e88... (59 %)
+Writing at 0x000f987f... (61 %)
+Writing at 0x000fff13... (63 %)
+Writing at 0x00105f1e... (65 %)
+Writing at 0x0010c255... (67 %)
+Writing at 0x00111f6a... (69 %)
+Writing at 0x00118140... (71 %)
+Writing at 0x0011e751... (73 %)
+Writing at 0x00124990... (75 %)
+Writing at 0x0012ad6c... (76 %)
+Writing at 0x00131552... (78 %)
+Writing at 0x00137a0d... (80 %)
+Writing at 0x0013dc2e... (82 %)
+Writing at 0x00143303... (84 %)
+Writing at 0x00148e55... (86 %)
+Writing at 0x0014f00c... (88 %)
+Writing at 0x001554f8... (90 %)
+Writing at 0x0015c270... (92 %)
+Writing at 0x001631b7... (94 %)
+Writing at 0x001692ca... (96 %)
+Writing at 0x0016f134... (98 %)
+Writing at 0x0017579b... (100 %)
+Wrote 1411552 bytes (843942 compressed) at 0x00020000 in 22.9 seconds (effective 493.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 178...
+Writing at 0x0000c000... (100 %)
+Wrote 3072 bytes (178 compressed) at 0x0000c000 in 0.1 seconds (effective 265.7 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x00017000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x00017000 in 0.2 seconds (effective 381.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+pu start user co�ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1718
+load:0x403cc710,len:0x974
+load:0x403ce710,len:0x2f68
+entry 0x403cc710
+  0;32mI (30) boot: ESP-IDF v5.1-dev-4124-gbb9200acec 2nd stage bootloader  0m
+  0;32mI (30) boot: compile time Mar 30 2023 23:43:32  0m
+  0;32mI (31) boot: chip revision: v0.3  0m
+  0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz  0m
+  0;32mI (40) boot.esp32c3: SPI Mode       : DIO  0m
+  0;32mI (44) boot.esp32c3: SPI Flash Size : 4MB  0m
+  0;32mI (49) boot: Enabling RNG early entropy source...  0m
+  0;32mI (55) boot: Partition Table:  0m
+  0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length  0m
+  0;32mI (65) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000  0m
+  0;32mI (73) boot:  1 nvs              WiFi data        01 02 00010000 00006000  0m
+  0;32mI (80) boot:  2 nvs_keys         NVS keys         01 04 00016000 00001000  0m
+  0;32mI (88) boot:  3 otadata          OTA data         01 00 00017000 00002000  0m
+  0;32mI (95) boot:  4 phy_init         RF data          01 01 00019000 00001000  0m
+  0;32mI (103) boot:  5 ota_0            OTA app          00 10 00020000 001e0000  0m
+  0;32mI (110) boot:  6 ota_1            OTA app          00 11 00200000 001e0000  0m
+  0;32mI (118) boot:  7 fctry            WiFi data        01 02 003e0000 00006000  0m
+  0;32mI (125) boot: End of partition table  0m
+  0;32mI (130) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3b690h (243344) map  0m
+  0;32mI (176) esp_image: segment 1: paddr=0005b6b8 vaddr=3fc94a00 size=034b4h ( 13492) load  0m
+  0;32mI (179) esp_image: segment 2: paddr=0005eb74 vaddr=40380000 size=014a4h (  5284) load  0m
+  0;32mI (183) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=105640h (1070656) map  0m
+  0;32mI (358) esp_image: segment 4: paddr=00165668 vaddr=403814a4 size=13350h ( 78672) load  0m
+  0;32mI (378) boot: Loaded app from partition at offset 0x20000  0m
+  0;32mI (379) boot: Disabling RNG early entropy source...  0m
+  0;32mI (390) cpu_start: Pro cpu up.  0m
+  0;32mI (399) cpu_start: Pro cpu start user code  0m
+  0;32mI (399) cpu_start: cpu freq: 160000000 Hz  0m
+  0;32mI (399) cpu_start: Application information:  0m
+  0;32mI (402) cpu_start: Project name:     light  0m
+  0;32mI (407) cpu_start: App version:      v1.0  0m
+  0;32mI (412) cpu_start: Compile time:     Mar 30 2023 23:43:10  0m
+  0;32mI (418) cpu_start: ELF file SHA256:  8d676e3d8fcaead2...  0m
+  0;32mI (424) cpu_start: ESP-IDF:          v5.1-dev-4124-gbb9200acec  0m
+  0;32mI (430) cpu_start: Min chip rev:     v0.3  0m
+  0;32mI (435) cpu_start: Max chip rev:     v0.99   0m
+  0;32mI (440) cpu_start: Chip rev:         v0.3  0m
+  0;32mI (445) heap_init: Initializing. RAM available for dynamic allocation:  0m
+  0;32mI (452) heap_init: At 3FCA9560 len 000331B0 (204 KiB): DRAM  0m
+  0;32mI (458) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM  0m
+  0;32mI (465) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM  0m
+  0;32mI (472) spi_flash: detected chip: generic  0m
+  0;32mI (476) spi_flash: flash io: dio  0m
+  0;33mW (480) rmt(legacy): legacy driver is deprecated, please migrate to `driver/rmt_tx.h` and/or `driver/rmt_rx.h`  0m
+  0;32mI (491) sleep: Configure to isolate all GPIO pins in sleep state  0m
+  0;32mI (497) sleep: Enable automatic switching of GPIO sleep configuration  0m
+  0;32mI (504) coexist: coex firmware version: 5315623  0m
+  0;32mI (509) coexist: coexist rom version 9387209  0m
+  0;32mI (515) app_start: Starting scheduler on CPU0  0m
+  0;32mI (519) main_task: Started on CPU0  0m
+  0;32mI (519) main_task: Calling app_main()  0m
+  0;32mI (529) led_driver_ws2812: Initializing light driver  0m
+  0;32mI (529) gpio: GPIO 9 | InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0   0m
+  0;33mW (549) esp_matter_core: Command 0x0047 on cluster 0x0300 already exists. Not creating again.  0m
+  0;32mI (549) app_main: Light created with endpoint_id 1  0m
+  0;32mI (559) pp: pp rom version: 9387209  0m
+  0;32mI (559) net80211: net80211 rom version: 9387209  0m
+W (579) wifi:  pp.c,3509  wifi driver task: 3fcb502c, prio:23, stack:6656, core=0
+W (579) wifi:  ieee80211_ioctl.c,2220  wifi firmware version: 3ad6bf4
+W (579) wifi:  ieee80211_ioctl.c,2221  wifi certification version: v7.0
+W (589) wifi:  ieee80211_ioctl.c,2222  config NVS flash: enabled
+W (589) wifi:  ieee80211_ioctl.c,2223  config nano formating: disabled
+W (599) wifi:  esf_buf.c,423  Init data frame dynamic rx buffer num: 32
+W (609) wifi:  esf_buf.c,430  Init management frame dynamic rx buffer num: 32
+W (609) wifi:  esf_buf.c,437  Init management short buffer num: 32
+W (619) wifi:  esf_buf.c,455  Init dynamic tx buffer num: 32
+W (619) wifi:  esf_buf.c,477  Init static tx FG buffer num: 2
+W (629) wifi:  wdev.c,2386  Init static rx buffer size: 1600
+W (629) wifi:  wdev.c,2393  Init static rx buffer num: 10
+W (639) wifi:  wdev.c,2394  Init dynamic rx buffer num: 32
+  0;32mI (649) wifi_init: rx ba win: 6  0m
+  0;32mI (649) wifi_init: tcpip mbox: 32  0m
+  0;32mI (649) wifi_init: udp mbox: 6  0m
+  0;32mI (659) wifi_init: tcp mbox: 6  0m
+  0;32mI (659) wifi_init: tcp tx win: 5744  0m
+  0;32mI (659) wifi_init: tcp rx win: 5744  0m
+  0;32mI (669) wifi_init: tcp mss: 1440  0m
+  0;32mI (669) wifi_init: WiFi IRAM OP enabled  0m
+  0;32mI (679) wifi_init: WiFi RX IRAM OP enabled  0m
+  0;32mI (689) chip DL : NVS set: chip-counters/reboot-count = 1 (0x1)  0m
+  0;32mI (689) chip DL : NVS set: chip-counters/total-hours = 0 (0x0)  0m
+  0;32mI (699) chip DL : NVS set: chip-config/unique-id = "B5B5B147D4CD8B12"  0m
+  0;32mI (699) chip DL : Real time clock set to 946684800 (0100/00/01 00:00:00 UTC)  0m
+  0;32mI (709) BLE_INIT: BT controller compile version  85a1090   0m
+  0;32mI (719) phy_init: phy_version 950,f732b06,Feb 15 2023,18:57:12  0m
+  0;33mW (719) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration  0m
+  0;32mI (769) BLE_INIT: Bluetooth MAC: 58:cf:79:0c:72:f2
+  0m
+  0;32mI (769) NimBLE: GAP procedure initiated: stop advertising.
+  0m
+  0;32mI (769) NimBLE: Failed to restore IRKs from store; status=8
+  0m
+  0;32mI (769) CHIP DL : BLE host-controller synced  0m
+  0;32mI (1279) chip DL : Configuring CHIPoBLE advertising (interval 25 ms, connectable)  0m
+  0;32mI (1279) NimBLE: GAP procedure initiated: advertise;   0m
+  0;32mI (1279) NimBLE: disc_mode=2  0m
+  0;32mI (1279) NimBLE:  adv_channel_map=0 own_addr_type=1 adv_filter_policy=0 adv_itvl_min=40 adv_itvl_max=40  0m
+  0;32mI (1289) NimBLE: 
+  0m
+  0;32mI (1299) chip DL : CHIPoBLE advertising started  0m
+  0;31mE (1299) chip DL : Long dispatch time: 591 ms, for event type 2  0m
+  0;32mI (1309) chip DL : Starting ESP WiFi layer  0m
+W (1309) wifi:  hal_mac.c,606  WDEVBBRXHUNG:0xc00000f0, en:1, timer:240(3840 us)
+W (1319) wifi:  hal_mac.c,608  WDEVBBTXHUNG:0x800000f0, en:1, timer:240(3840 us)
+W (1329) wifi:  hal_mac.c,610  WDEVBBCCAHUNG:0xf0, en:0, timer:240(3840 us)
+W (1329) wifi:  hal_mac.c,615  WDEVHUNGRECOVER:0xffff0fff, rxHungRecover en:1, timer:32767 cycles(409 us) , txHungRecover en:0, timer:4095 cycles(51 us) 
+W (1349) wifi:  ieee80211.c,546  mode : sta (58:cf:79:0c:72:f0)
+W (1349) wifi:  ieee80211_sta.c,3014  enable tsf
+W (1359) wifi:  ieee80211_ioctl.c,2727  Haven't to connect to a suitable AP now!
+  0;32mI (1359) chip DL : Done driving station state, nothing else to do...  0m
+W (1369) wifi:  ieee80211_ioctl.c,2727  Haven't to connect to a suitable AP now!
+  0;32mI (1379) chip DL : Done driving station state, nothing else to do...  0m
+  0;32mI (1379) chip SVR : Initializing subscription resumption storage...  0m
+  0;32mI (1389) chip SVR : Server initializing...  0m
+  0;32mI (1399) chip TS : Last Known Good Time:  unknown   0m
+  0;32mI (1399) chip TS : Setting Last Known Good Time to firmware build time 2023-03-30T23:49:28  0m
+  0;32mI (1409) chip DMG : AccessControl: initializing  0m
+  0;32mI (1419) chip DMG : Examples::AccessControlDelegate::Init  0m
+  0;32mI (1419) chip DMG : AccessControl: setting  0m
+  0;32mI (1429) chip DMG : DefaultAclStorage: initializing  0m
+  0;32mI (1429) chip DMG : DefaultAclStorage: 0 entries loaded  0m
+  0;32mI (1439) chip ZCL : Using ZAP configuration...  0m
+  0;32mI (1439) esp_matter_cluster: Cluster plugin init common callback  0m
+  0;32mI (1449) chip DMG : AccessControlCluster: initializing  0m
+  0;32mI (1459) chip ZCL : 0x3c11a040ep 0 clus 0x0000_0030 attr 0x0000_0000 not supported  0m
+  0;32mI (1459) chip ZCL : Initiating Admin Commissioning cluster.  0m
+  0;31mE (1469) chip ZCL : Duplicate attribute override registration failed  0m
+  0;32mI (1479) chip DIS : Updating services using commissioning mode 1  0m
+  0;32mI (1479) chip DIS : CHIP minimal mDNS started advertising.  0m
+  0;32mI (1489) chip DIS : Advertise commission parameter vendorID=65521 productID=32768 discriminator=3840/15 cm=1  0m
+  0;32mI (1499) chip DIS : CHIP minimal mDNS configured as 'Commissionable node device'; instance name: D87A48E0F3BDC657.  0m
+  0;32mI (1509) chip DIS : mDNS service published: _matterc._udp  0m
+  0;32mI (1519) chip IN : CASE Server enabling CASE session setups  0m
+  0;32mI (1529) chip SVR : Joining Multicast groups  0m
+  0;32mI (1529) chip SVR : Server Listening...  0m
+  0;32mI (1529) esp_matter_core: Dynamic endpoint 0 added  0m
+  0;32mI (1539) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0003's Attribute 0x0001 is 0 **********  0m
+  0;32mI (1549) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0004's Attribute 0x0000 is 128 **********  0m
+  0;32mI (1559) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0004's Attribute 0xFFFC is <invalid type: 0> **********  0m
+  0;32mI (1569) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0005's Attribute 0x0000 is 0 **********  0m
+  0;32mI (1579) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0006's Attribute 0xFFFC is 1 **********  0m
+  0;32mI (1589) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0006's Attribute 0x4003 is null **********  0m
+  0;32mI (1599) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0006's Attribute 0x0000 is 1 **********  0m
+  0;32mI (1619) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0006's Attribute 0x0000 is 1 **********  0m
+  0;32mI (1629) chip ZCL : Endpoint 1 On/off already set to new value  0m
+  0;32mI (1629) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0x0002 is 1 **********  0m
+  0;32mI (1639) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0x0003 is 254 **********  0m
+  0;32mI (1649) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0xFFFC is 3 **********  0m
+  0;32mI (1659) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0x0000 is 64 **********  0m
+  0;32mI (1669) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0x4000 is 64 **********  0m
+  0;32mI (1689) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0008's Attribute 0x0000 is 64 **********  0m
+  0;32mI (1699) led_driver_ws2812: led set r:0, g:0, b:0  0m
+  0;32mI (1699) esp_matter_attribute: ********** Endpoint 0x0001's Cluster 0x0300's Attribute 0x4010 is null **********  0m
+  0;32mI (1709) esp_matter_core: Dynamic endpoint 1 added  0m
+  0;31mE (1719) chip DL : Long dispatch time: 335 ms, for event type 2  0m
+  0;32mI (1729) chip DL : Configuring CHIPoBLE advertising (interval 25 ms, connectable)  0m
+  0;32mI (1729) chip DL : Device already advertising, stop active advertisement and restart  0m
+  0;32mI (1739) NimBLE: GAP procedure initiated: stop advertising.
+  0m
+  0;32mI (1749) NimBLE: GAP procedure initiated: advertise;   0m
+  0;32mI (1749) NimBLE: disc_mode=2  0m
+  0;32mI (1759) NimBLE:  adv_channel_map=0 own_addr_type=1 adv_filter_policy=0 adv_itvl_min=40 adv_itvl_max=40  0m
+  0;32mI (1769) NimBLE: 
+  0m
+  0;32mI (1769) app_main: Commissioning window opened  0m
+  0;31mE (1779) esp_matter_core: Failed to open the node nvs_namespace  0m
+  0;32mI (1779) led_driver_ws2812: led set r:0, g:0, b:0  0m
+  0;32mI (1779) chip DL : WIFI_EVENT_STA_START  0m
+W (1789) wifi:  ieee80211_ioctl.c,2727  Haven't to connect to a suitable AP now!
+  0;32mI (1789) led_driver_ws2812: led set r:0, g:0, b:0  0m
+  0;32mI (1799) chip DL : Done driving station state, nothing else to do...  0m
+  0;32mI (1799) led_driver_ws2812: led set r:63, g:51, b:40  0m
+  5n  0;32m>   0m  0;32mI (2129) main_task: Returned from app_main()  0m
+  0;32mI (31479) chip DL : Configuring CHIPoBLE advertising (interval 500 ms, connectable)  0m
+  0;32mI (31479) chip DL : Device already advertising, stop active advertisement and restart  0m
+  0;32mI (31489) NimBLE: GAP procedure initiated: stop advertising.
+  0m
+  0;32mI (31489) NimBLE: GAP procedure initiated: advertise;   0m
+  0;32mI (31499) NimBLE: disc_mode=2  0m
+  0;32mI (31509) NimBLE:  adv_channel_map=0 own_addr_type=1 adv_filter_policy=0 adv_itvl_min=800 adv_itvl_max=800  0m
+  0;32mI (31519) NimBLE: 
+

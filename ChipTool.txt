@@ -1,0 +1,75 @@
+Last login: Fri Mar 31 19:40:42 on ttys001
+❯ cd ~/esp/esp-matter/examples/light
+❯ get_idf
+Setting IDF_PATH to '/Users/allen/esp/esp-idf'
+Detecting the Python interpreter
+Checking "python3" ...
+Python 3.10.9
+"python3" has been detected
+Checking Python compatibility
+Checking other ESP-IDF version.
+Adding ESP-IDF tools to PATH...
+Checking if Python packages are up to date...
+Constraint file: /Users/allen/.espressif/espidf.constraints.v5.1.txt
+Requirement files:
+ - /Users/allen/esp/esp-idf/tools/requirements/requirements.core.txt
+Python being checked: /Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin/python
+Python requirements are satisfied.
+Updated PATH variable:
+  /Users/allen/esp/esp-idf/components/esptool_py/esptool:/Users/allen/esp/esp-idf/components/espcoredump:/Users/allen/esp/esp-idf/components/partition_table:/Users/allen/esp/esp-idf/components/app_update:/Users/allen/.espressif/tools/xtensa-esp-elf-gdb/12.1_20221002/xtensa-esp-elf-gdb/bin:/Users/allen/.espressif/tools/riscv32-esp-elf-gdb/12.1_20221002/riscv32-esp-elf-gdb/bin:/Users/allen/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin:/Users/allen/.espressif/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin:/Users/allen/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin:/Users/allen/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin:/Users/allen/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/Users/allen/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin:/Users/allen/.espressif/python_env/idf5.1_py3.10_env/bin:/Users/allen/esp/esp-idf/tools:/Users/allen/miniconda3/bin:/Users/allen/miniconda3/condabin:/usr/local/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/allen/Library/Android/sdk/tools:/Users/allen/Library/Android/sdk/platform-tools
+Done! You can now compile ESP-IDF projects.
+Go to the project directory and run:
+
+  idf.py build
+
+Setting ESP_MATTER_PATH to '/Users/allen/esp/esp-matter'
+❯ chip-tool interactive start
+
+[1680262908183] [3288:57671] [DL] KVS will be written to: file:///tmp/chip_kvs
+[1680262908219] [3288:57671] [DL] _Init
+[1680262908219] [3288:57671] [IN] UDP::Init bind&listen port=0
+[1680262908219] [3288:57671] [IN] UDP::Init bound to port=63369
+[1680262908219] [3288:57671] [IN] UDP::Init bind&listen port=0
+[1680262908219] [3288:57671] [IN] UDP::Init bound to port=57002
+[1680262908219] [3288:57671] [IN] BLEBase::Init - setting/overriding transport
+[1680262908219] [3288:57671] [IN] TransportMgr initialized
+[1680262908221] [3288:57671] [FP] Initializing FabricTable from persistent storage
+[1680262908221] [3288:57671] [TS] Last Known Good Time: [unknown]
+[1680262908222] [3288:57671] [TS] Setting Last Known Good Time to firmware build time 2023-03-30T19:58:07
+[1680262908225] [3288:57671] [ZCL] Using ZAP configuration...
+[1680262908226] [3288:57671] [IN] CASE Server enabling CASE session setups
+[1680262908226] [3288:57671] [IN] SecureSession[0x600002518000]: Allocated Type:2 LSID:28044
+[1680262908226] [3288:57671] [SC] Allocated SecureSession (0x600002518000) - waiting for Sigma1 msg
+[1680262908226] [3288:57671] [DIS] Updating services using commissioning mode 0
+[1680262908226] [3288:57671] [CTL] System State Initialized...
+[1680262908226] [3288:57671] [CTL] Stopping commissioning discovery over DNS-SD
+[1680262908226] [3288:57671] [CTL] Setting attestation nonce to random value
+[1680262908226] [3288:57671] [CTL] Setting CSR nonce to random value
+[1680262908227] [3288:57684] [DL] _OnPlatformEvent
+[1680262908227] [3288:57684] [DIS] Updating services using commissioning mode 0
+>>> pairing ble-wifi 0x7283 xiaopingguo zxcasd123 20202021 3840
+[1680262932468] [3288:57671] [TOO] Command: pairing ble-wifi 0x7283 xiaopingguo zxcasd123 20202021 3840
+[1680262932471] [3288:57684] [CTL] Stopping commissioning discovery over DNS-SD
+[1680262932471] [3288:57684] [CTL] Setting attestation nonce to random value
+[1680262932471] [3288:57684] [CTL] Setting CSR nonce to random value
+[1680262932473] [3288:57684] [CTL] Couldn't get ExampleOpCredsCAKey from storage: ../../src/controller/ExamplePersistentStorage.cpp:93: CHIP Error 0x000000A0: Value not found in the persisted storage
+[1680262932477] [3288:57684] [CTL] Couldn't get ExampleOpCredsICAKey from storage: ../../src/controller/ExamplePersistentStorage.cpp:93: CHIP Error 0x000000A0: Value not found in the persisted storage
+[1680262932480] [3288:57684] [CTL] Generating RCAC
+[1680262932487] [3288:57684] [CTL] Generating ICAC
+[1680262932489] [3288:57684] [CTL] Generating NOC
+[1680262932494] [3288:57684] [FP] Validating NOC chain
+[1680262932500] [3288:57684] [FP] NOC chain validation successful
+[1680262932501] [3288:57684] [FP] Added new fabric at index: 0x1
+[1680262932501] [3288:57684] [FP] Assigned compressed fabric ID: 0x50C3D7DC7F07E831, node ID: 0x000000000001B669
+[1680262932501] [3288:57684] [TS] Last Known Good Time: 2023-03-30T19:58:07
+[1680262932501] [3288:57684] [TS] New proposed Last Known Good Time: 2021-01-01T00:00:00
+[1680262932501] [3288:57684] [TS] Retaining current Last Known Good Time
+[1680262932503] [3288:57684] [FP] Metadata for Fabric 0x1 persisted to storage.
+[1680262932504] [3288:57684] [TS] Committing Last Known Good Time to storage: 2023-03-30T19:58:07
+[1680262932506] [3288:57684] [CTL] Joined the fabric at index 1. Fabric ID is 0x0000000000000001 (Compressed Fabric ID: 50C3D7DC7F07E831)
+[1680262932528] [3288:57684] [BLE] NewConnection
+[1680262932528] [3288:57684] [CTL] Setting wifi credentials from parameters
+[1680262932528] [3288:57684] [CTL] Setting attestation nonce to random value
+[1680262932528] [3288:57684] [CTL] Setting CSR nonce to random value
+[1680262932529] [3288:57684] [CTL] Commission called for node ID 0x0000000000007283
+[1]    3288 abort      chip-tool interactive start
